@@ -1,23 +1,60 @@
-# 🧠 UTD24-SCH: A Scientific Collaboration Hypergraph Dataset
-**UTD24-SCH** is an academic collaboration dataset constructed from the UTD 24 journal list, which includes the most prestigious journals in business and management research. This dataset focuses on publications from 2020 to 2024, and is designed to support research on scientific collaborator recommendation, academic network modeling, and hypergraph representation learning.
+# Scientific Collaborator Recommendation via Hypergraph Embedding
 
-This repository contains the **complete web scraping pipeline** used to collect and process the metadata. The code is modular, extensible, and tailored for robust academic data extraction from journal websites, indexing platforms, and institutional homepages.
+This is the official codebase for our paper:
 
-## 🔍 Dataset Highlights
-**Source**: [UTD 24 journals](https://jindal.utdallas.edu/the-utd-top-100-business-school-research-rankings/)
+> **Scientific Collaborator Recommendation via Hypergraph Embedding**  
+> Xiaochen Wang, Wensheng Huang, Butian Zhao, Shijuan Li  
 
-**Time window**: 2020–2024, 5 years
+## Introduction
 
-**Collected metadata**:
-- Article title & abstract
-- Author names & order
-- Author affiliations & institutions
-- Publication venue & year
-- Author semantic attributes: gender, career stage, research domain
+We propose a novel framework for collaborator recommendation based on hypergraph representation learning. Our approach models scholars and academic metadata as nodes in a **heterogeneous Scientific Collaboration Hypergraph (SCH)**, and uses a **HyperGCN-based encoder** to capture high-order relational patterns.
 
-## 💡 Applications
-This dataset supports a wide range of academic tasks:
-- Scientific collaborator recommendation
-- Hypergraph neural network training
-- Interpretability-enhanced academic recommendation systems
-- Cold-start performance analysis
+The framework includes: (1) Construction of a heterogeneous hypergraph from AMiner dataset; (2) Hypergraph convolution-based representation learning; (3) Coauthorship likelihood modeling via translational scoring; (4) Explanation generation using hyperedge-type templates. Experiments demonstrate the effectiveness and interpretability of our approach over strong baselines.
+
+## Dataset
+
+We construct the **Scientific Collaboration Hypergraph (SCH)** from [AMiner’s publicly available subsets](https://www.aminer.cn/data), including:
+
+- Coauthorship and citation networks (Academic Social Network)
+- Gender and title labels (Web User Profiling and Scholar Profiling)
+
+Processed node and hyperedge lists are provided under `data/`.
+
+## Environment Requirements
+
+- Python 3.8+
+- PyTorch ≥ 1.12
+- NumPy
+- NetworkX
+- Scikit-learn
+- tqdm
+- matplotlib
+
+```bash
+conda create -n sch_env python=3.8
+conda activate sch_env
+pip install -r requirements.txt
+```
+
+## Project Structure
+```graphql
+├── data/                   # Processed SCH data
+├── model/                  # HyperGCN and scoring modules
+├── explain/                # Template-based explanation generation
+├── evaluate.py             # Evaluation pipeline
+├── train.py                # Main training script
+├── utils.py                # Metric, data I/O utilities
+├── configs/                # Config YAMLs
+└── README.md
+```
+
+## How to Run
+```bash
+# Train the SCH model
+python train.py --config configs/sch.yaml
+# Evaluate performance
+python evaluate.py --model saved_model.pt --topk 20
+```
+
+## Contact
+For questions or feedback, feel free to open an issue or contact [wxc9154@163.com].
