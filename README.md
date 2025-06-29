@@ -2,9 +2,9 @@
 **UTD24-SCH** is an academic collaboration dataset constructed from the UTD 24 journal list, which includes the most prestigious journals in business and management research. This dataset focuses on publications from 2020 to 2024, and is designed to support research on scientific collaborator recommendation, academic network modeling, and hypergraph representation learning.
 
 ## 🔍 Dataset Highlights
-**Source**: [UTD 24 journals](https://jindal.utdallas.edu/the-utd-top-100-business-school-research-rankings/)
+**Source**: [UTD 24 journals](https://jindal.utdallas.edu/the-utd-top-100-business-school-research-rankings/).
 
-**Time window**: 2020–2024
+**Time window**: 2020–2024, 5 years.
 
 **Collected metadata**:
 (1) Article title & abstract
