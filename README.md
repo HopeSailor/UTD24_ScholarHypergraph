@@ -1,9 +1,7 @@
-# Scientific Collaborator Recommendation via Hypergraph Embedding
-
 This is the official codebase for our paper:
 
 > **Scientific Collaborator Recommendation via Hypergraph Embedding**  
-> Xiaochen Wang, Wensheng Huang, Butian Zhao, and Shijuan Li (The paper is currently under review. A full version of the codebase will be released upon acceptance)
+> Xiaochen Wang, Wensheng Huang, Butian Zhao, Yi Bu, and Shijuan Li (The paper is currently under submission, a full version of the codebase will be released upon acceptance)
 
 ## Introduction
 
@@ -57,4 +55,4 @@ python evaluate.py --model saved_model.pt --topk 20
 ```
 
 ## Contact
-For questions or feedback, feel free to open an issue or contact [wxc9154@163.com].
+For questions or feedback, feel free to open an issue or contact via [my e-mail](2501111165@stu.pku.edu.cn).
