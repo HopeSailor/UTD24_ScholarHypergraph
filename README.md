@@ -55,4 +55,4 @@ python evaluate.py --model saved_model.pt --topk 20
 ```
 
 ## Contact
-For questions or feedback, feel free to open an issue or contact via [my e-mail](2501111165@stu.pku.edu.cn).
+For questions or feedback, feel free to open an issue or contact via my e-mail: xcwang25@stu.pku.edu.cn
